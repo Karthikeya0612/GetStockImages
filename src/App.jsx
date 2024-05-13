@@ -8,6 +8,7 @@ function App() {
   const handleFormSubmit = (query) => {
     setSearchQuery(query);
     console.log(query);
+    console.log(import.meta.env.VITE_API_KEY);
     // You can perform further actions here, such as fetching images based on the query
   };
   return (
