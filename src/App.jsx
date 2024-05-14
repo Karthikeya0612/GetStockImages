@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import './App.css'
 import Header from './components/Header'
 import Form from './components/Form'
+import Images from './components/Images'
 import axios from 'axios';
 
 const API_URL = 'https://api.unsplash.com/search/photos';
@@ -15,8 +16,8 @@ function App() {
       const response = await axios.get(`${API_URL}?query=${query}&page=1&per_page=20&client_id=${import.meta.env.VITE_API_KEY}`);
       setImages(response.data.results);
       setTotalImages(response.data.total_pages);
-      // console.log(images);
-      // console.log(totalImages);
+      console.log(images);
+      console.log(response.data);
 
     }
     catch (error) {
@@ -34,15 +35,7 @@ function App() {
     <>
       <Header/> 
       <Form onSubmit={handleFormSubmit}/> 
-      <div className="container">
-        <div className="row">
-          {images.map((image) => (
-            <div key={image.id} className="col-md-4">
-              <img src={image.urls.small} alt={image.alt_description} className="img-fluid"/>
-            </div>
-          ))}
-        </div>  
-      </div>
+      <Images images={images}/>
     </>
   )
 }
