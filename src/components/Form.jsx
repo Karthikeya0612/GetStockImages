@@ -14,7 +14,8 @@ function Form({onSubmit}) {
     return (
       <div className="text-center text-lg ">
         <input type="text" required placeholder="Search Stock Images" name="name" value={query} onChange={handleChange} className="p-2 m-1 placeholder:text-dark-blue bg-light-blue text-dark-blue border-4 rounded-xl border-dark-blue"/>
-        <button type="submit" onClick={handleSubmit} className="p-2 m-1 text-dark-blue font-extrabold border-4 rounded-xl border-dark-blue">Search
+        <button type="submit" onClick={handleSubmit} className="p-2 m-1 text-dark-blue font-extrabold border-4 rounded-xl border-dark-blue hover:bg-coral">
+          Search
         </button>
         
       </div>

@@ -9,6 +9,7 @@ export default {
     colors: {
       'dark-blue': '#00246B',
       'light-blue': '#CADCFC',
+      'coral' : '#FF6F61'
     }
   },
   plugins: [],
